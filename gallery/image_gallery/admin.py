@@ -14,7 +14,7 @@ class AdminForm(forms.ModelForm):
     """
     class Meta:
         model = ImageModel
-        fields = ['path_to_image', 'name', 'datetime']
+        fields = ["path_to_image", "name", "datetime"]
 
 
 @admin.register(ImageModel)
@@ -30,8 +30,8 @@ class AdminModel(admin.ModelAdmin):
 
     """
     form = AdminForm
-    list_display = ('name', 'datetime', 'size')
+    list_display = ("name", "datetime", "size")
 
     def save_model(self, request, obj, form, change):
-        form.instance.size = request.FILES['path_to_image'].size
+        form.instance.size = request.FILES["path_to_image"].size
         return super().save_model(request, obj, form, change)
