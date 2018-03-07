@@ -1,0 +1,29 @@
+<!-- Extends 'base.html'-->
+{% extends 'base.html' %}
+<!-- Load static -->
+{% load staticfiles %}
+{% block title %}Download{% endblock title %}
+<!-- Add styles -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock head %}
+
+{% block content%}
+<div class="col-md-12">
+    <!-- Create form for image -->
+    <form class="form-horizontal" enctype="multipart/form-data" method="post" >
+        {% csrf_token %}
+        <!-- Set all field and labels -->
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}" class="">{{ field.label }}
+                </label>
+                 {{ field }}
+            </div>
+        {% endfor %}
+        <!-- Buttons save and back -->
+        <input class="btn btn-default" value="Load" type="submit">
+        <a href="{% url 'gallery' %}" class="btn btn-link">Back</a>
+     </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,44 @@
+<!-- Extends 'base.html' -->
+{% extends 'base.html' %}
+<!-- Load static -->
+{% load staticfiles %}
+{% block title %}Galery{% endblock title %}
+<!-- Add styles -->
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock head %}
+
+{% block content %}
+<div class="col-md-12 images">
+    <!-- Get dict with image model attributes-->
+    {% for image in object_list %}
+        <div class="col-md-4 image-add">
+            <div class="">
+                <!-- Image path -->
+                <img src="{{ image.path }}" class="image-path img-rounded image">
+            </div>
+            <div class="describe">
+                <!-- Image title -->
+                <div class="name"><strong>Title:</strong> {{ image.name }}</div>
+                <!-- Load time -->
+                <div class="time"><strong>Load:</strong> {{ image.time }}</div>
+                <!-- Size in bytes -->
+                <div class="size"><strong>Size:</strong> {{ image.size }} bytes</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="buttons">
+    <button class="btn btn-default" id="load_more">Load more</button>
+    <a class="btn btn-default" id="" href="{% url 'download' %}">Download image</a>
+</div>
+{% endblock content %}
+<!-- Add scripts for images-->
+{% block script %}
+<!-- Websocket for get more images -->
+<script src="{% static 'js/galery.js' %}">
+</script>
+<!-- Show image -->
+<script src="{% static 'js/image.js' %}">
+</script>
+{% endblock script %}

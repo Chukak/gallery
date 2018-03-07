@@ -3,7 +3,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 
 
 application = ProtocolTypeRouter({
-    "webwsocket": URLRouter([
+    "websocket": URLRouter([
 
     ]),
 })

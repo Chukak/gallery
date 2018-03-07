@@ -1,5 +1,5 @@
-from .models import ImageModel
-from .forms import ImageForm
+from image_gallery.models import ImageModel
+from image_gallery.forms import ImageForm
 from django.views.generic import CreateView, TemplateView
 
 
@@ -17,14 +17,14 @@ class ImageView(TemplateView):
     name - image name, time - date, when image uploaded.
 
     """
-    template_name = 'gallery/photos.html'
+    template_name = "image_gallery/images.html"
 
     def get_queryset(self):
         """
         Get ImageModel objects.
 
         """
-        return ImageModel.objects.all().order_by('-datetime')[:6]
+        return ImageModel.objects.all().order_by("-datetime")[:6]
 
     def get_context_data(self, **kwargs):
         """
@@ -32,11 +32,11 @@ class ImageView(TemplateView):
 
         """
         context = super().get_context_data(**kwargs)
-        context['object_list'] = [{
-                'path': obj.path_to_image.url,
-                'size': obj.size,
-                'name': obj.name,
-                'time': obj.datetime.strftime('%d %B %Y in %H:%M'),
+        context["object_list"] = [{
+                "path": obj.path_to_image.url,
+                "size": obj.size,
+                "name": obj.name,
+                "time": obj.datetime.strftime("%d %B %Y in %H:%M"),
             } for obj in self.get_queryset()]
         return context
 
@@ -54,13 +54,13 @@ class DownloadView(CreateView):
 
     """
     form_class = ImageForm
-    template_name = 'gallery/download.html'
-    success_url = '/'
+    template_name = "image_gallery/download.html"
+    success_url = "/"
 
     def form_valid(self, form):
         """
         Set size to form and returns this method.
         """
         # set size in bytes form model image object
-        form.instance.size = self.request.FILES['path_to_image'].size
+        form.instance.size = self.request.FILES["path_to_image"].size
         return super().form_valid(form)

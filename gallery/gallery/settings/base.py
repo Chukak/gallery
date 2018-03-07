@@ -9,7 +9,7 @@ If you need production settings, check production.py.
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'z0w_o9lw5n3#46+bi4=ckgx!)g-%wpaw-9he21bzx!$+h48qgb'
@@ -102,4 +102,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Channels settings
-ASGI_APPLICATION = ".routing.application"
+ASGI_APPLICATION = "gallery.routing.application"
