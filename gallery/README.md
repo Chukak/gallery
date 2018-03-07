@@ -1,7 +1,7 @@
 # Simple-gallery
 
 ## Documentations
-[Русский](https://github.com/Chukak/simple-gallery/blob/master/readme_ru.md)
+[Русский](https://github.com/Chukak/gallery/blob/master/gallery/README_RU.md)
 
 ## Introduction
 This is a simple gallery images, created on Django and Channels.
