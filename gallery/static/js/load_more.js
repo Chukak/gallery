@@ -1,7 +1,7 @@
 // full ready web page
 $(document).ready(function() {
     // create new socket
-    socket = new WebSocket('ws://' + window.location.host + '/chat/');
+    socket = new WebSocket('ws://' + window.location.host);
     // this func call when websocket connect
     socket.onopen = function() {
         console.log('connect')
