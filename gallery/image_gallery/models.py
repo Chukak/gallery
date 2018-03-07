@@ -22,7 +22,7 @@ def get_image_path(instance, file):
 class ImageModel(models.Model):
     """
     Image model.
-    Have 4 attributes:
+    Has 4 attributes:
     1. path_to_image - path to image in dir, get path from get_image_path func.
     2. datetime - date, when image uploaded.
     3. size - size of image in bytes.
@@ -30,6 +30,7 @@ class ImageModel(models.Model):
 
     Also have 1 override method:
     1. __str__ - returns image name.
+
     """
     path_to_image = models.ImageField(upload_to=get_image_path, verbose_name="Path to image")
     datetime = models.DateTimeField(default=now, db_column="time_load", verbose_name="Time to load")
