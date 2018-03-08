@@ -6,8 +6,9 @@ from django.utils.timezone import now
 
 def get_image_path(instance, file):
     """
-    Set image path. Use uuid and end of file (for example, uuid.jpg).
-    Uuid - random 14-bit sequence, .jpg - file extension (for example, .jpg, .png, etc).
+    Set image path. Use uuid and end of file.
+    Uuid - random 128-bit number (for example, f278c317-a946-4802-868e-42ddde3d3f56, etc),
+    .jpg - file extension (for example, .jpg, .png, etc).
 
     Take two arguments:
     1. instance - model object.
@@ -16,7 +17,7 @@ def get_image_path(instance, file):
     Returns path in the format - "images/[random uuid].[file extension]"
 
     """
-    return "images/{0}{1}".format(uuid.uuid1(), os.path.splitext(file)[1])
+    return "images/{0}{1}".format(uuid.uuid4(), os.path.splitext(file)[1])
 
 
 class ImageModel(models.Model):
