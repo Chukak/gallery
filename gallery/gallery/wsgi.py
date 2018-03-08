@@ -1,5 +1,6 @@
 """
 WSGI config for gallery project.
+Setting - gallery.settings.development module
 
 """
 
