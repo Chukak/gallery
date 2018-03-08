@@ -16,12 +16,3 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-# Mysql
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'OPTIONS': {
-#            'read_default_file': os.path.join(BASE_DIR, 'mysql.cnf'),
-#        },
-#    }
-# }
