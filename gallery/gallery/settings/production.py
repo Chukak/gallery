@@ -7,9 +7,16 @@ from .base import *
 
 DEBUG = False
 
+"""
+Add your valid hosts here.
+
+"""
 ALLOWED_HOSTS = []
 
-# Mysql
+"""
+Production has only mysql database.
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
