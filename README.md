@@ -11,7 +11,7 @@ Show and upload images in media/ directory.
 You needs git. Clone this repository.
 
 ```
-git clone https://github.com/Chukak/simple-gallery.git
+git clone https://github.com/Chukak/gallery.git
 ```
 
 ### Requirements
