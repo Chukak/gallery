@@ -4,11 +4,11 @@
 [Русский](https://github.com/Chukak/gallery/blob/master/gallery/README_RU.md)
 
 ## Introduction
-This is a simple gallery images, created on Django and Channels.
-Show and upload images in media/ directory.
+It is a simple gallery images, created on Django and Channels.
+Show and upload images in `media/` directory.
 
 ## Getting started
-You needs git. Clone this repository.
+Clone this repository.
 
 ```
 git clone https://github.com/Chukak/gallery.git
@@ -22,25 +22,24 @@ Also you need channels 2.0+.
 pip install -r requirements.txt
 ```
 
-### Start project
+### Run the project
 Make django migrations.
 
-``` python manage.py makemigrations ```
+``` 
+python manage.py makemigrations 
+python manage.py migrate
+```
 
-Migrate.
-
-``` python manage.py migrate ```
-
-Run django server
+Run django server.
 
 ``` python manage.py runserver ```
 
 #### Superuser
-This project has admin site. Create superuser command:
+This project has an administrative site. To create a superuser run command:
 
 ``` python manage.py createsuperuser ```
 
-And check admin/ url.
+And got to `admin/` url.
 
 ## Author
 [chukak](https://github.com/Chukak)
