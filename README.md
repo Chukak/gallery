@@ -40,6 +40,3 @@ This project has an administrative site. To create a superuser run command:
 ``` python manage.py createsuperuser ```
 
 And got to `admin/` url.
-
-## Author
-[chukak](https://github.com/Chukak)
